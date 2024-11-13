@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Produtos</title>
+</head>
+<body>
+<h1>Produtos Disponiveis</h1>
+<ul>
+    <li th:each="produto : ${produtos}">
+        <span th:text="${produto.nome}">Produto</span>
+        <span th:text="${produto.preco}">Preco</span>
+    </li>
+</ul>
+
+<form action="/produtos/novo" method="post">
+    <input type="text" name="nome" placeholder="Nome do Produto" required/>
+    <input type="text" name="descricao" placeholder="Descricao" required/>
+    <input type="number" name="preco" placeholder="Preco" required/>
+    <button type="submit">Adicionar Produto</button>
+</form>
+</body>
+</html>
